@@ -15,3 +15,5 @@ python, go, cpp 폴더 내부에 test_client 를 돌려보는 방법
 	go	   : "go run test_client.go"
 	cpp	   : "./test_client"
 6. 서버와 클라이언트에서 데이터 전달이 이루어지고 커맨드창에 전달된 데이터가 입력되는 것을 확인한다.
+
+example 폴더는 제어시스템의 시뮬레이션이다. 내부 파일은 sim_cpp, sim_go, sim_py로 되어있으며 각각 서버는 python으로 클라이언트가 cpp, go, python으로 구성되어 있는것을 확인할 수 있다. 해당 폴더에서 실행은 위 순서와 마찬가지로 이루어지고 잘 돌아갔는지 확인하는 방법은 "plant output.png" 파일이 정상적으로 생성이 되었으며, 내부 그림이 0으로 수렴하는 형태임을 확인한다.
