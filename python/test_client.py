@@ -4,10 +4,15 @@ HOST = 'localhost'
 PORT = 9999
 
 with tcc.tcp_client(HOST, PORT) as tccp:
-    for i in range(1000):
-        k, l = tccp.recv()
-        print(l)
-        # k, l = tccp.recv()
-        # print(l)
-        tccp.send("ddddddddddddddddddddddddddddddddddddddddddddddd")
+    typ, dat = tccp.recv()
+    print(f"recv : {typ}, {dat}")
+    tccp.send(dat)
+
+    typ, dat = tccp.recv()
+    print(f"recv : {typ}, {dat}")
+    tccp.send(dat)
+
+    typ, dat = tccp.recv()
+    print(f"recv : {typ}, {dat}")
+    tccp.send(dat)
     

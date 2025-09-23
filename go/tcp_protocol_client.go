@@ -42,7 +42,7 @@ func Send[T any](conn net.Conn, data T) {
 	val := any(data)
 
 	switch val.(type) {
-	case int:
+	case int64:
 		send_data := "<INT>" + fmt.Sprintf("%d", val) + "<END>"
 		send_data_byte := []byte(send_data)
 		_, err := conn.Write(send_data_byte)

@@ -9,12 +9,19 @@ const int port = 9999;
 int main()
 {
     tcp_client tccp = tcp_client(host, port);
-    for(int i = 0; i < 10; i++)
-    {
-        int k = tccp.Recv<int>();
-        cout << k << endl;
 
-        tccp.Send<int>(i);
-    }
-    
+    int i = tccp.Recv<int>();
+    cout << "recv : " << i << endl;
+
+    tccp.Send<int>(i);
+
+    double f = tccp.Recv<double>();
+    cout << "recv : " << f << endl;
+
+    tccp.Send<double>(f);
+
+    string s = tccp.Recv<string>();
+    cout << "recv : " << s << endl;
+
+    tccp.Send<string>(s);
 }
