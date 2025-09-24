@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "tcp_protocol_client.h"
+#include "../../cpp/tcp_protocol_client.h"
 using namespace std;
 
 const string host = "127.0.0.1";
