@@ -26,9 +26,9 @@ class tcp_server:
     mean_time = any
     std_time = any
 
-    # sameple constant time
-    samepleconst_flag = False
-    samepleconst_time = int
+    # sample constant time
+    sampleconst_flag = False
+    sampleconst_time = int
 
     def __init__(self, host, port):
         if isinstance(host, str) and isinstance(port, int):
@@ -138,22 +138,22 @@ class tcp_server:
             if self.print_flag:
                 print(f"def: diagnostic_metric | error | metric flag false")
 
-    def set_sampleconst(self, samepleconst_flag, samepleconst_time):
-        if isinstance(samepleconst_flag, bool) and isinstance(samepleconst_time, int):
-            self.samepleconst_flag = samepleconst_flag
-            self.samepleconst_time = samepleconst_time
+    def set_sampleconst(self, sampleconst_flag, sampleconst_time):
+        if isinstance(sampleconst_flag, bool) and isinstance(sampleconst_time, int):
+            self.sampleconst_flag = sampleconst_flag
+            self.sampleconst_time = sampleconst_time
         else:
             if self.print_flag:
-                print(f"def: set_samepleconst | error | type false")
+                print(f"def: set_sampleconst | error | type false")
             exit(-1)
 
     def wait(self, last_time):
-        if self.samepleconst_flag:
-            if last_time < self.samepleconst_time:
+        if self.sampleconst_flag:
+            if last_time < self.sampleconst_time:
                 start_time = time.perf_counter_ns()
                 end_time = time.perf_counter_ns()
 
-                wait_time = self.samepleconst_time - last_time
+                wait_time = self.sampleconst_time - last_time
                 while True:
                     if (end_time - start_time) / 1000000 < wait_time:
                         time.sleep(0.000001)
@@ -162,7 +162,7 @@ class tcp_server:
                     end_time = time.perf_counter_ns()
             else:
                 if self.print_flag:
-                    print(f"def: wait | alert | samepleconst time insufficient")
+                    print(f"def: wait | alert | sampleconst time insufficient")
         else:
             if self.print_flag:
                 print(f"def: wait | error | sampleconst flag false")
@@ -270,12 +270,12 @@ class tcp_server:
             if length > self.stack - 1:
                 del self.metric_buf[self.stack - 1]
 
-            if self.samepleconst_flag:
+            if self.sampleconst_flag:
                 self.wait(run_time)
                 end_point = time.perf_counter_ns()
                 run_time = (end_point - start_point)/1000000
                 if self.print_flag:
-                    print(f"def: send | alert | wait until {self.samepleconst_time}ms, run time: {run_time}ms")
+                    print(f"def: send | alert | wait until {self.sampleconst_time}ms, run time: {run_time}ms")
 
             self.metric_buf.insert(0, run_time)
             self.last_time = run_time
@@ -335,12 +335,12 @@ class tcp_server:
             if length > self.stack - 1:
                 del self.metric_buf[self.stack - 1]
 
-            if self.samepleconst_flag:
+            if self.sampleconst_flag:
                 self.wait(run_time)
                 end_point = time.perf_counter_ns()
                 run_time = (end_point - start_point)/1000000
                 if self.print_flag:
-                    print(f"def: recv | alert | wait until {self.samepleconst_time}ms, run time: {(run_time)}ms")
+                    print(f"def: recv | alert | wait until {self.sampleconst_time}ms, run time: {(run_time)}ms")
             
             self.metric_buf.insert(0, run_time)
             self.last_time = run_time
