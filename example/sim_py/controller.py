@@ -1,3 +1,5 @@
+import sys
+sys.path.append(r"../../python")
 import tcp_protocol_client as tcc
 HOST = 'localhost'
 PORT = 9999
