@@ -116,7 +116,7 @@ def control_loop():
                 if alpha_degrees > 10:
                     voltage = 0
                 else:
-                    if abs(u) < 24:
+                    if abs(u) < 10:
                         voltage = u
                     else:
                         voltage = 0
