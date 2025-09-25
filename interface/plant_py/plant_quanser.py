@@ -78,7 +78,7 @@ def control_loop():
 
     with QubeClass(hardware=hardware, pendulum=pendulum, frequency=frequency) as myQube:
         with tcs.tcp_server(HOST, PORT) as tcsp:
-            tcsp.set_mertric(False, 100)
+            tcsp.set_metric(False, 100)
             tcsp.set_sampleconst(False, 10)
             tcsp.set_printflag(False)
 
@@ -111,7 +111,7 @@ def control_loop():
 
                 states = command_deg*np.array([np.pi/180, 0, 0, 0]) - np.array([theta, alpha, theta_dot, alpha_dot])
 
-                u = tcsp.recv()
+                _, u = tcsp.recv()
 
                 if alpha_degrees > 10:
                     voltage = 0
