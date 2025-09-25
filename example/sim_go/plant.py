@@ -24,7 +24,7 @@ C = np.array([[1,	0,	0,	0],
 D = np.array([[0],
               [0]], dtype=float)
 
-x = np.array([[-0.13],
+x = np.array([[0.3],
               [0.09],
               [0],
               [0]], dtype=float)

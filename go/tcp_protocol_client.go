@@ -10,26 +10,35 @@ import (
 )
 
 const byte_size = 1024
+const print_flag = true
 
 func InitTCP(HOST string, PORT string) net.Conn {
 	conn, err := net.Dial("tcp", HOST+":"+PORT)
 	if err != nil {
-		fmt.Println("def: InitTCP | error | connection false")
+		if print_flag {
+			fmt.Println("def: InitTCP | error | connection false")
+		}
 		os.Exit(-1)
 	}
 
 	tcp, ack := conn.(*net.TCPConn)
 	if !ack {
-		fmt.Println("def: InitTCP | error | tcp connect false")
+		if print_flag {
+			fmt.Println("def: InitTCP | error | tcp connect false")
+		}
 		os.Exit(-1)
 	}
 
 	if err := tcp.SetNoDelay(true); err != nil {
-		fmt.Println("def: InitTCP | error | no delay set false")
+		if print_flag {
+			fmt.Println("def: InitTCP | error | no delay set false")
+		}
 		os.Exit(-1)
 	}
 
-	fmt.Println("def: InitTCP | alert | connect")
+	if print_flag {
+		fmt.Println("def: InitTCP | alert | connect")
+	}
 
 	return conn
 }
@@ -47,7 +56,9 @@ func Send[T any](conn net.Conn, data T) {
 		send_data_byte := []byte(send_data)
 		_, err := conn.Write(send_data_byte)
 		if err != nil {
-			fmt.Println("def: Send | error | communication false")
+			if print_flag {
+				fmt.Println("def: Send | error | communication false")
+			}
 			os.Exit(-1)
 		}
 
@@ -59,7 +70,9 @@ func Send[T any](conn net.Conn, data T) {
 
 			if err != nil {
 				if n != 0 {
-					fmt.Println("def: Send | error | communication false")
+					if print_flag {
+						fmt.Println("def: Send | error | communication false")
+					}
 					os.Exit(-1)
 				}
 			}
@@ -74,9 +87,13 @@ func Send[T any](conn net.Conn, data T) {
 		}
 
 		if bytes.Contains(read_data_byte, []byte("<CHK>")) {
-			fmt.Println("def: Send | alert | communication complete")
+			if print_flag {
+				fmt.Println("def: Send | alert | communication complete")
+			}
 		} else {
-			fmt.Println("def: send | error | communication false")
+			if print_flag {
+				fmt.Println("def: send | error | communication false")
+			}
 			os.Exit(-1)
 		}
 	case float64:
@@ -84,7 +101,9 @@ func Send[T any](conn net.Conn, data T) {
 		send_data_byte := []byte(send_data)
 		_, err := conn.Write(send_data_byte)
 		if err != nil {
-			fmt.Println("def: Send | error | communication false")
+			if print_flag {
+				fmt.Println("def: Send | error | communication false")
+			}
 			os.Exit(-1)
 		}
 
@@ -96,7 +115,9 @@ func Send[T any](conn net.Conn, data T) {
 
 			if err != nil {
 				if n != 0 {
-					fmt.Println("def: Send | error | communication false")
+					if print_flag {
+						fmt.Println("def: Send | error | communication false")
+					}
 					os.Exit(-1)
 				}
 			}
@@ -111,9 +132,13 @@ func Send[T any](conn net.Conn, data T) {
 		}
 
 		if bytes.Contains(read_data_byte, []byte("<CHK>")) {
-			fmt.Println("def: Send | alert | communication complete")
+			if print_flag {
+				fmt.Println("def: Send | alert | communication complete")
+			}
 		} else {
-			fmt.Println("def: send | error | communication false")
+			if print_flag {
+				fmt.Println("def: send | error | communication false")
+			}
 			os.Exit(-1)
 		}
 	case string:
@@ -121,7 +146,9 @@ func Send[T any](conn net.Conn, data T) {
 		send_data_byte := []byte(send_data)
 		_, err := conn.Write(send_data_byte)
 		if err != nil {
-			fmt.Println("def: Send | error | communication false")
+			if print_flag {
+				fmt.Println("def: Send | error | communication false")
+			}
 			os.Exit(-1)
 		}
 
@@ -133,7 +160,9 @@ func Send[T any](conn net.Conn, data T) {
 
 			if err != nil {
 				if n != 0 {
-					fmt.Println("def: Send | error | communication false")
+					if print_flag {
+						fmt.Println("def: Send | error | communication false")
+					}
 					os.Exit(-1)
 				}
 			}
@@ -148,13 +177,19 @@ func Send[T any](conn net.Conn, data T) {
 		}
 
 		if bytes.Contains(read_data_byte, []byte("<CHK>")) {
-			fmt.Println("def: Send | alert | communication complete")
+			if print_flag {
+				fmt.Println("def: Send | alert | communication complete")
+			}
 		} else {
-			fmt.Println("def: send | error | communication false")
+			if print_flag {
+				fmt.Println("def: send | error | communication false")
+			}
 			os.Exit(-1)
 		}
 	default:
-		fmt.Println("def: send | error | type false")
+		if print_flag {
+			fmt.Println("def: send | error | type false")
+		}
 		os.Exit(-1)
 	}
 }
@@ -164,7 +199,9 @@ func Recv(conn net.Conn) (string, any) {
 	send_data_byte := []byte(send_data)
 	_, err := conn.Write(send_data_byte)
 	if err != nil {
-		fmt.Println("def: Send | error | communication false")
+		if print_flag {
+			fmt.Println("def: Send | error | communication false")
+		}
 		os.Exit(-1)
 	}
 
@@ -176,7 +213,9 @@ func Recv(conn net.Conn) (string, any) {
 
 		if err != nil {
 			if n != 0 {
-				fmt.Println("def: Send | error | communication false")
+				if print_flag {
+					fmt.Println("def: Send | error | communication false")
+				}
 				os.Exit(-1)
 			}
 		}
@@ -212,7 +251,9 @@ func Recv(conn net.Conn) (string, any) {
 		data = read_data
 
 	} else {
-		fmt.Println("def: send | error | communication false")
+		if print_flag {
+			fmt.Println("def: send | error | communication false")
+		}
 		os.Exit(-1)
 	}
 
