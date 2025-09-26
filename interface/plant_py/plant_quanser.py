@@ -63,9 +63,7 @@ def control_loop():
     # not important if using virtual
     pendulum = 1
 
-    frequency = 500# Hz
-    state_theta_dot = np.array([0,0], dtype=np.float64)
-    state_alpha_dot = np.array([0,0], dtype=np.float64)
+    frequency = 50# Hz, sampling rate
 
     # Limit sample rate for scope to 50 hz
     countMax = frequency / 50
@@ -98,18 +96,9 @@ def control_loop():
                 theta = myQube.motorPosition * -1
                 alpha_f =  myQube.pendulumPosition
                 alpha = np.mod(alpha_f, 2*np.pi) - np.pi
-                alpha_degrees = abs(math.degrees(alpha))
 
-                tcsp.send(theta)
-                tcsp.send(alpha)
-
-                # Calculate angular velocities with filter of 50 and 100 rad
-                theta_dot, state_theta_dot = ddt_filter(theta, state_theta_dot, 50, 1/frequency)
-                alpha_dot, state_alpha_dot = ddt_filter(alpha, state_alpha_dot, 100, 1/frequency)
-
-                command_deg = 0
-
-                states = command_deg*np.array([np.pi/180, 0, 0, 0]) - np.array([theta, alpha, theta_dot, alpha_dot])
+                tcsp.send(-theta)
+                tcsp.send(-alpha)
 
                 _, u = tcsp.recv()
 
