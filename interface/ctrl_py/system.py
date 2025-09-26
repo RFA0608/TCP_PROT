@@ -11,8 +11,6 @@ HOST = 'localhost'
 PORT = 9999
 
 def main():
-    ts = 5
-    margin = 0.25
     controller_obj = ctr.Controller()
 
     with tcc.tcp_client(HOST, PORT) as tccp:
@@ -25,10 +23,11 @@ def main():
                 _, y0 = tccp.recv()
                 _, y1 = tccp.recv()
                 u = controller_obj.ctrl(y0, y1)
+                print(f"y0: {y0} | y1: {y1}")
 
                 edc = time.perf_counter_ns() / 1000000
+                print(f"sample_period: {edc-stc}ms")
                 
-                time.sleep((ts - (edc - stc) - margin) / 1000)
                 tccp.send(u)
             elif flag == "E":
                 break
