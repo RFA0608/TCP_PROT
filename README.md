@@ -1,3 +1,6 @@
+# 코드 설명
+
+
 Python 서버와 Python, Golang, Cpp 의 클라이언트를 구동하는 간단한 코드.
 
 python 폴더 내부에 tcp_protocol_server.py 는 python 에서 서버를 구동하는 코드, 같은 폴더 내부에 tcp_protocol_client.py 는 python 에서 클라이언트를 구동하는 코드이다.
