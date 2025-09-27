@@ -68,19 +68,18 @@ go 폴더 내부에는 'tcp_protocol_client.go' 파일이 존재합니다.
    
 3. WSL에서 가상환경을 써야하는 경우
    해당 깃허브 파일을 다운받아 가장 상단(아무 폴더도 들어가지 않은 cpp, example, go ... 등의 파일이 보이는 위치)에서 다음의 명령어를 이용하여 파이썬 가상환경을 실행합니다.
-     ```
-       "python3 -m venv venv"
-       "source ./venv/bin/activate"
-       "pip install numpy"
-       "pip install matplotlib"
-     ```
+     ```bash
+     python3 -m venv venv
+     source ./venv/bin/activate
+     pip install numpy
+     pip install matplotlib
+
 
   -> 퀀서 장비를 돌리는 경우
     TCP 서버의 주소를 모든 아이피를 허용할 수 있게 "0.0.0.0" 로 설정하고 포트 넘버 9999 를 윈도우 상에서 방화벽 해지를 해야합니다. 방화벽 해지 후 WSL의 커맨드창에 다음 명령어를 입력합니다.
-      ```
-        "sudo apt install net-tools"
-        "ifconfig"
-      ```
+      ```bash
+      sudo apt install net-tools
+      ifconfig
 
     WSL 의 설정을 변경하지 않았을 경우 네트워킹 모드가 Nat 으로 구성되어 있습니다. 따라서 TCP 클라이언트는 위 명령어를 쳐서 나오는 커맨드 결과 중 eth0 의 inet 주소를 그대로 이용합니다. 포트는 서버와 같은 것을 이용하시면 됩니다.
 
