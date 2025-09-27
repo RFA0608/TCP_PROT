@@ -28,3 +28,11 @@ go 폴더 내부에는 'tcp_protocol_client.go' 파일이 존재합니다.
 
 ## matlab 폴더(내부 quanser simulation 아래)
 해당 폴더는 quanser 장비를 구동하기 위한 원점에서 선형화된 연속시간 상태공간 모델 파일인 'plant_continous_model.mat' 이 존재하고, 매트랩 코드 파일인 'system_load.m' 을 통하여 이산시간 제어기 설계를 진행할 수 있습니다. 또한 'system_sim' 이름의 시뮬링크 파일을 이용하여 가시적으로 모델의 출력을 생성하고 확인 가능합니다.
+
+## interface 폴더
+### plant_py
+해당 폴더는 퀀서 장비를 이용할 수 있는 python 코드가 구성되어 있으며 다음과 같은 파일 이름과 작동 방식을 갖습니다.
+
+1. plant_quanser.py
+2. plant_quanser
+### ctrl_py
