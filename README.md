@@ -109,6 +109,6 @@ WSL 의 설정을 변경하지 않았을 경우 네트워킹 모드가 Nat 으�
 
 ## quanser 실행 영상
 1. 지연 없는 제어기
-  https://youtu.be/_Q-o9VO9SZw
+  [퀀서 테스트 non delayed controller](https://youtu.be/6EzNQtzz20k)
 2. 지연 있는 제어기
-   https://youtu.be/_Q-o9VO9SZw
+  [퀀서 테스트 delayed controller](https://youtu.be/_Q-o9VO9SZw)
