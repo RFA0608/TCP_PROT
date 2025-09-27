@@ -26,4 +26,5 @@ go 폴더 내부에는 'tcp_protocol_client.go' 파일이 존재합니다.
 1. tcp_protocol_client.go
    해당 파일은 python 에서 TCP 서버가 구동 중일때 클라이언트로 상호작용을 위한 함수를 구현한 go 파일입니다. 해당 파일의 작동을 위한 go 코드의 예시는 같은 폴더의 'test_client.go'를 참조하실 수 있습니다. golang 특성상 'tcp_protocol_client.go' 파일과 작동을 위한 코드는 go.mod 가 있는 같을 폴더에서 작동해야 합니다.
 
-
+## matlab 폴더(내부 quanser simulation 아래)
+해당 폴더는 quanser 장비를 구동하기 위한 원점에서 선형화된 연속시간 상태공간 모델 파일인 'plant_continous_model.mat' 이 존재하고, 매트랩 코드 파일인 'system_load.m' 을 통하여 이산시간 제어기 설계를 진행할 수 있습니다. 또한 'system_sim' 이름의 시뮬링크 파일을 이용하여 가시적으로 모델의 출력을 생성하고 확인 가능합니다.
