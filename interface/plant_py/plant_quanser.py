@@ -103,13 +103,10 @@ def control_loop():
 
                 _, u = tcsp.recv()
 
-                if alpha_degrees > 10:
-                    voltage = 0
+                if abs(u) < 10:
+                    voltage = u
                 else:
-                    if abs(u) < 10:
-                        voltage = u
-                    else:
-                        voltage = 0
+                    voltage = 0
 
                 # # Write commands
                 myQube.write_voltage(voltage)
