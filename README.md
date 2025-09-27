@@ -61,3 +61,20 @@ go 폴더 내부에는 'tcp_protocol_client.go' 파일이 존재합니다.
    "plant_py" 의 'plant_sim_origianl.py' 는 'system.py' 와 같이 돌릴 수 있지만 지연이 있는 제어기의 경우 샘플링 시간 만큼 지연을 포함하고 있어 시뮬레이션을 위한 특수 코드가 필요합니다. 'system_delayed_for_sim.py' 가 해당 역할을 합니다.
 
 # 실행해보기
+## 실행 순서
+### 공통
+해당 코드는 대부분 WSL 위에서 작동을 보장하지만, python 의 경우 윈도우에서도 작동됩니다. 
+1. 윈도우에서 가상환경을 쓰지 않을 경우
+2. WSL에서 가상환경을 써야하는 경우
+   해당 깃허브 파일을 다운받아 가장 상단(아무 폴더도 들어가지 않은 cpp, example, go ... 등의 파일이 보이는 위치)에서 다음의 명령어를 이용하여 파이썬 가상환경을 실행합니다.
+     ```
+     "python3 -m venv venv"
+     "source ./venv/bin/activate"
+     "pip install numpy"
+     "pip install matplotlib"
+     ```
+
+   
+### simulation
+
+### quanser test
