@@ -114,8 +114,8 @@ def control_loop():
                 # Plot to scopes
                 count += 1
                 if count >= countMax:
-                    scopePendulum.sample(timeStamp, [states[1]])
-                    scopeBase.sample(timeStamp, [states[0]])
+                    scopePendulum.sample(timeStamp, [theta])
+                    scopeBase.sample(timeStamp, [alpha])
                     scopeVoltage.sample(timeStamp,[voltage])
                     count = 0
 
