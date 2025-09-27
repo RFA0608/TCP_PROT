@@ -67,27 +67,27 @@ go 폴더 내부에는 'tcp_protocol_client.go' 파일이 존재합니다.
 1. 윈도우에서 가상환경을 쓰지 않을 경우
    
 3. WSL에서 가상환경을 써야하는 경우
-   해당 깃허브 파일을 다운받아 가장 상단(아무 폴더도 들어가지 않은 cpp, example, go ... 등의 파일이 보이는 위치)에서 다음의 명령어를 이용하여 파이썬 가상환경을 실행합니다.
-     ```bash
-     python3 -m venv venv
-     source ./venv/bin/activate
-     pip install numpy
-     pip install matplotlib
+해당 깃허브 파일을 다운받아 가장 상단(아무 폴더도 들어가지 않은 cpp, example, go ... 등의 파일이 보이는 위치)에서 다음의 명령어를 이용하여 파이썬 가상환경을 실행합니다.
+```bash
+python3 -m venv venv
+source ./venv/bin/activate
+pip install numpy
+pip install matplotlib
+```
 
+-> 퀀서 장비를 돌리는 경우
+TCP 서버의 주소를 모든 아이피를 허용할 수 있게 "0.0.0.0" 로 설정하고 포트 넘버 9999 를 윈도우 상에서 방화벽 해지를 해야합니다. 방화벽 해지 후 WSL의 커맨드창에 다음 명령어를 입력합니다.
+```bash
+sudo apt install net-tools
+ifconfig
+```
 
-  -> 퀀서 장비를 돌리는 경우
-    TCP 서버의 주소를 모든 아이피를 허용할 수 있게 "0.0.0.0" 로 설정하고 포트 넘버 9999 를 윈도우 상에서 방화벽 해지를 해야합니다. 방화벽 해지 후 WSL의 커맨드창에 다음 명령어를 입력합니다.
-      ```bash
-      sudo apt install net-tools
-      ifconfig
+WSL 의 설정을 변경하지 않았을 경우 네트워킹 모드가 Nat 으로 구성되어 있습니다. 따라서 TCP 클라이언트는 위 명령어를 쳐서 나오는 커맨드 결과 중 eth0 의 inet 주소를 그대로 이용합니다. 포트는 서버와 같은 것을 이용하시면 됩니다.
 
-
-    WSL 의 설정을 변경하지 않았을 경우 네트워킹 모드가 Nat 으로 구성되어 있습니다. 따라서 TCP 클라이언트는 위 명령어를 쳐서 나오는 커맨드 결과 중 eth0 의 inet 주소를 그대로 이용합니다. 포트는 서버와 같은 것을 이용하시면 됩니다.
-
-  -> 시뮬레이션만 하는 경우
-    시뮬레이션만 하는 경우 해당 코드를 그대로 작동하실 수 있습니다.
+-> 시뮬레이션만 하는 경우
+시뮬레이션만 하는 경우 해당 코드를 그대로 작동하실 수 있습니다.
     
-  이후 작동 인터프리터를 (venv)가 붙은 것을 이용하시면 됩니다.
+이후 작동 인터프리터를 (venv)가 붙은 것을 이용하시면 됩니다.
 
 ### simulation
 폴더 "interface/plant_py" 에서 ?_sim_.py 로 구성된 파일을 실행하고, 폴더 "interface/ctrl_py" 에서 위의 설명에 대응되는 system_?.py 를 실행하면 시뮬레이션 결과가 "interface/plnat_py" 폴더에 png 파일로 생성됩니다.
