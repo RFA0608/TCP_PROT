@@ -1,4 +1,4 @@
-# 프로젝트 개발 단계
+# 1️⃣프로젝트 개발 단계
 1. ✅️[100%] TCP 통신을 위한 서버와 클라이언트 코드 구현
 2. ✅️[100%] quanser qube servo 3 개별 구동
 3. ✅️[80%] TCP 통신과 servo 3 연결 후 제어기 동작 확인
@@ -7,13 +7,13 @@
 
 ➡️[3단계 정체 이유] 제어기에서 발생하는 딜레이를 고려한 설계 필요, python 이 아닌 cpp, golang 으로 구성된 제어기 코드 설계 필요
 
-# 프로젝트 설명
+# 2️⃣프로젝트 설명
 ## 목적
 해당 코드는 quanser 의 큐브 서보 3 제품의 python 라이브러리의 입출력 데이터를 TCP/IP 를 이용하여 python, cpp, golang 으로 데이터 전송을 지원하는 코드입니다. 
 ## 사용 방향
 TCP/IP로 구현된 데이터 전송 함수를 이용하여 python, cpp, golang 으로 데이터를 전송하여 해당 언어로 구현된 **암호화된 제어기**를 작동시켜보는 것이 사용 방향입니다.
 
-# 프로젝트 구성
+# 3️⃣프로젝트 구성
 ## python 폴더
 python 폴더 내부에는 'tcp_protocol_server.py' 파일과 'tcp_protocol_client.py' 파일이 존재합니다.
 
@@ -69,7 +69,7 @@ go 폴더 내부에는 'tcp_protocol_client.go' 파일이 존재합니다.
 4. system_delayed_for_sim.py
    "plant_py" 의 'plant_sim_origianl.py' 는 'system.py' 와 같이 돌릴 수 있지만 지연이 있는 제어기의 경우 샘플링 시간 만큼 지연을 포함하고 있어 시뮬레이션을 위한 특수 코드가 필요합니다. 'system_delayed_for_sim.py' 가 해당 역할을 합니다.
 
-# 실행해보기
+# 4️⃣실행해보기
 ## 실행 순서
 ### 공통
 해당 코드는 대부분 WSL 위에서 작동을 보장하지만, python 의 경우 윈도우에서도 작동됩니다. 
