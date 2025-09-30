@@ -125,4 +125,4 @@ WSL 의 설정을 변경하지 않았을 경우 네트워킹 모드가 Nat 으�
 2. 지연 있는 제어기
   [퀀서 테스트 delayed controller](https://youtu.be/_Q-o9VO9SZw)
 3. **지연 있는 제어기의 ARX 버전 SEAL을 통한 암호화 된 제어기 with CPP**
-   [퀀서 테스트 encrypted controller](https://youtu.be/brksf2zr6Z0)
+   [퀀서 테스트 encrypted controller](https://youtu.be/brksf2zr6Z0) + [퀀서 테스트 original controller vs encrypted controller](https://youtu.be/4iE7Qzs6VXw)
