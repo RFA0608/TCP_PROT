@@ -28,6 +28,8 @@ R_L = 1;
 L = dlqr(dt_A', dt_C', Q_L, R_L, 0)';
 
 Q_K = eye(4);
+Q_K(1, 1) = 1000;
+Q_K(2, 2) = 500;
 R_K = 1;
 K = dlqr(dt_A, dt_B, Q_K, R_K, 0);
 
@@ -55,6 +57,16 @@ for i=1:max_iter
     xp = dt_A * xp + dt_B * u;
 
     e_his = [e_his; (xp - xc)'];
+end
+
+p = zeros(1, 4);
+L = acker(F', H', p)';
+F_new = F - L * H;
+
+PQ = [];
+for i=1:4
+    temp = H*F_new^(4-i)*G;
+    PQ = [PQ; [temp, H*F_new^(4-i)*L]];
 end
 
 figure(1)
