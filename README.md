@@ -3,7 +3,7 @@
 2. ✅️[100%] quanser qube servo 3 개별 구동
 3. ✅️[80%] TCP 통신과 servo 3 연결 후 제어기 동작 확인
 4. ☑️[0%] 스윙업을 통한 초기 진자 자동으로 스탠딩업
-5. ☑️[10%] 암호화된 제어기 작동
+5. ☑️[70%] 암호화된 제어기 작동
 
 ➡️[3단계 정체 이유] 
 
@@ -124,3 +124,5 @@ WSL 의 설정을 변경하지 않았을 경우 네트워킹 모드가 Nat 으�
   [퀀서 테스트 non delayed controller](https://youtu.be/6EzNQtzz20k)
 2. 지연 있는 제어기
   [퀀서 테스트 delayed controller](https://youtu.be/_Q-o9VO9SZw)
+**3. 지연 있는 제어기의 ARX 버전 SEAL을 통한 암호화 된 제어기 with CPP**
+   [퀀서 테스트 encrypted controller](https://youtu.be/brksf2zr6Z0)
