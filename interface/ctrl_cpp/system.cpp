@@ -24,7 +24,7 @@ int main()
     double run_time;
     bool EoL = true;
     
-    controller ctrl_obj = controller();
+    controller_delayed ctrl_obj = controller_delayed();
     tcp_client tccp = tcp_client(host, port);
 
     string flag;
@@ -45,7 +45,7 @@ int main()
                 y1 = tccp.Recv<double>();
                 u = ctrl_obj.ctrl(y0, y1);
 
-                cout << "y0: " << y0 <<" | y1: " << y1 << endl;
+                cout << "y0: " << y0 <<" | y1: " << y1 << " | u: " << u << endl;
 
                 state = 2;
             }
