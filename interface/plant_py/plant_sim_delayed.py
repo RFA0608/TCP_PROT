@@ -1,6 +1,6 @@
 # Need to move from the venv or operational reference position to the Python folder at the bottom
 import sys
-sys.path.append(r"./python")
+sys.path.append(r"../../python")
 
 import tcp_protocol_server as tcs
 
