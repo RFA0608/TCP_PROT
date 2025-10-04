@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/system_enc.dir/system_enc.cpp.o -o system_enc  /usr/local/lib/libseal-4.1.a 

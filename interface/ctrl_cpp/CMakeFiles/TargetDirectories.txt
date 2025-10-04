@@ -1,3 +1,0 @@
-/home/mike5/codedir/quanser/251004/TCP_PROT/interface/ctrl_cpp/CMakeFiles/system_enc.dir
-/home/mike5/codedir/quanser/251004/TCP_PROT/interface/ctrl_cpp/CMakeFiles/edit_cache.dir
-/home/mike5/codedir/quanser/251004/TCP_PROT/interface/ctrl_cpp/CMakeFiles/rebuild_cache.dir
