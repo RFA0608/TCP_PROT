@@ -29,7 +29,7 @@ graph LR
 The code implements controller versions in Python, C++, and Go.
 The interfacing code for the Python simulator and the actual hardware, corresponding to each controller, can be found in the "interface/plant" directory.
 The actual device consists of a single file, "plant.py" in "interface/plant/py/hardware", while the simulator consists of "model.py" and "plant.py" in "interface/plant/py/simulation".
-**Code explanation and technical interpretation can be found at the link [QQS3C-obsidian](https://publish.obsidian.md/quansercontrol/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/QQS3C/Introduction/Quanser+Qube+Servo+3+Control)**
+**Code explanation and technical interpretation can be found at the link [QQS3C-obsidian](https://publish.obsidian.md/quansercontrol/Lib/QQS3C/Introduction/Quanser+Qube+Servo+3+Control)**
 
 ### Controller description
 You can check the "ctrl_*.py" controller file, which is written in Python, in the "interface/controller/py" folder of the code.
@@ -72,14 +72,14 @@ at least. (The following description is after installing the above three element
 If WSL is installed, the appropriate Linux OS is Ubuntu-24.04 LTS version. 
 
 ### Install and operate
-You can find Installation guide in [**QQS3C-obsidian > Installation guide**](https://publish.obsidian.md/quansercontrol/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/QQS3C/Introduction/Installation+guide). The installation method is **quite tricky**, so please refer to it.
+You can find Installation guide in [**QQS3C-obsidian > Installation guide**](https://publish.obsidian.md/quansercontrol/Lib/QQS3C/Introduction/Installation+guide). The installation method is **quite tricky**, so please refer to it.
 1. Only Windows users refer to
-   [QQS3C-obsidian > Using Windows only](https://publish.obsidian.md/quansercontrol/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/QQS3C/Introduction/Using+Windows+only)
+   [QQS3C-obsidian > Using Windows only](https://publish.obsidian.md/quansercontrol/Lib/QQS3C/Introduction/Using+Windows+only)
 2. Both Windows and WSL users refer to
-   [QQS3C-obsidian > Using both Windows and WSL](https://publish.obsidian.md/quansercontrol/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/QQS3C/Introduction/Using+both+Windows+and+WSL)
+   [QQS3C-obsidian > Using both Windows and WSL](https://publish.obsidian.md/quansercontrol/Lib/QQS3C/Introduction/Using+both+Windows+and+WSL)
 
 ### Change to your code
-The library tried to maintain consistency of the code while creating it. See link [QQS3C-obsidian > Controller modification](https://publish.obsidian.md/quansercontrol/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/QQS3C/Implementation/Controller+modification) for a description of it.
+The library tried to maintain consistency of the code while creating it. See link [QQS3C-obsidian > Controller modification](https://publish.obsidian.md/quansercontrol/Lib/QQS3C/Implementation/Controller+modification) for a description of it.
 
 ---
 
