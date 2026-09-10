@@ -29,7 +29,7 @@ graph LR
 The code implements controller versions in Python, C++, and Go.
 The interfacing code for the Python simulator and the actual hardware, corresponding to each controller, can be found in the "interface/plant" directory.
 The actual device consists of a single file, "plant.py" in "interface/plant/py/hardware", while the simulator consists of "model.py" and "plant.py" in "interface/plant/py/simulation".
-**Code explanation and technical interpretation can be found at the link [QQS3C-obsidian](https://publish.obsidian.md/qqs3c)**
+**Code explanation and technical interpretation can be found at the link [QQS3C-obsidian](https://publish.obsidian.md/quansercontrol/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/QQS3C/Introduction/Quanser+Qube+Servo+3+Control)**
 
 ### Controller description
 You can check the "ctrl_*.py" controller file, which is written in Python, in the "interface/controller/py" folder of the code.
